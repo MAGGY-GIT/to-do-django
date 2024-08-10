@@ -8,7 +8,14 @@ class Task(models.Model):
     title = models.CharField(max_length=200) 
     description = models.TextField(null=True, blank=True)
     complete = models.BooleanField(default=False)
+    #allows values of selection to be added
     created = models.DateTimeField(auto_now_add=True)
     
     def __str__ (self):
+        return self.title
+    
+    class Meta:
+        ordering = ['complete']
+        #this will arrange the models in the status of their completeness
+        #the complete tasks wll be moved to the bottom
         
