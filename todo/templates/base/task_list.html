@@ -1,0 +1,27 @@
+<h1>My to do list</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+  </tr>
+
+  {% for task in object_list %}
+  <!--to loop throught the to do list items-->
+  <!--object_list calls on the data in the model as a QuerySet represents a collection of objects from your database-->
+
+  <tr>
+    <td> {{task.title}} </td>
+  </tr>
+
+  {% empty %}
+  <!--a conditional function so that if there is not list of items
+  the statement below will be rendered-->
+  <h3>No items in the list</h3>
+
+  {% endfor %}
+
+
+  
+  <tr></tr>
+  <tr></tr>
+</table>
